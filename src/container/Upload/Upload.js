@@ -29,13 +29,14 @@ const Upload = ({ setSelectedFile }) => {
   const handleChange = (e) => {
     const fileUploaded = e.target.files[0];
     setSelectedFile(() => fileUploaded);
+    console.log(fileUploaded.type);
   };
 
   return (
     <>
       <TitleApp>Image Converter</TitleApp>
       <div style={{ display: "grid" }}>
-        <label htmlFor="File">Click Here!</label>
+        {/* <label htmlFor="File">Click Here!</label> */}
         <Button onClick={handleChoose}> Choose your File </Button>
         <input
           style={{ display: "none" }}
