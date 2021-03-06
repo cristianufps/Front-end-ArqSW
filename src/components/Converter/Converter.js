@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import FileData from "../../container/Upload/FileData";
 import Upload from "../../container/Upload/Upload";
 import FileFormat from "../../container/Download/FileFormat";
-import ConvertButton from "../../container/ConvertButton/ConvertButton";
+import ConvertButton from "../../container/Download/ConvertButton";
 
 import styled from "styled-components";
 

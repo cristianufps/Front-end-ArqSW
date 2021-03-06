@@ -19,9 +19,7 @@ const MainContainer = styled.div`
 function App() {
   return (
     <MainContainer className="App">
-      {/* <h1>Converter</h1> */}
       <GlobalStyle />
-
       <Router>
         <Switch>
           <Route path="/" component={Presentation} exact />

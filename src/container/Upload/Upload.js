@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 const TitleApp = styled.h1`
@@ -28,8 +28,18 @@ const Upload = ({ setSelectedFile }) => {
 
   const handleChange = (e) => {
     const fileUploaded = e.target.files[0];
-    setSelectedFile(() => fileUploaded);
-    console.log(fileUploaded.type);
+    if (
+      fileUploaded.type !== "image/jpeg" &&
+      fileUploaded.type !== "image/gif" &&
+      fileUploaded.type !== "image/bmp" &&
+      fileUploaded.type !== "image/png"
+    ) {
+      console.log("f");
+      alert("Ese archivo no se puede convertir");
+    } else {
+      setSelectedFile(() => fileUploaded);
+      console.log(fileUploaded.type);
+    }
   };
 
   return (

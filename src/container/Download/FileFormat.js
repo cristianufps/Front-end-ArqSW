@@ -21,8 +21,10 @@ const Buttons = styled.button`
 const FileFormat = ({ selectedFile, setExt }) => {
   const handleClick = (e) => {
     e.preventDefault();
+
     setExt(() => e.target.name);
     console.log(e.target.name);
+    console.log(e);
   };
 
   return (
@@ -40,7 +42,7 @@ const FileFormat = ({ selectedFile, setExt }) => {
       ) : (
         <Container>
           {formats.map(({ id, name, img }) => (
-            <Buttons onClick={handleClick} key={id}>
+            <Buttons key={id}>
               <img src={img} name={name} alt={name} width="100" />
             </Buttons>
           ))}

@@ -14,10 +14,9 @@ const Button = styled.button`
   margin-top: 20px;
   margin-bottom: 40px;
   height: 35px;
-  width: 400px;
 `;
 
-const Converter = ({ selectedFile, ext }) => {
+const ConvertButton = ({ selectedFile, ext }) => {
 
   const onFileUpload = () => {
     const formData = new FormData();
@@ -32,7 +31,7 @@ const Converter = ({ selectedFile, ext }) => {
 
   return (
     <>
-      {selectedFile ? (
+      {selectedFile && ext ? (
         <Button onClick={onFileUpload}>Convert!</Button>
       ) : (
         <Button onClick={onFileUpload} style={{ background: "gray" }} disabled>
@@ -43,4 +42,4 @@ const Converter = ({ selectedFile, ext }) => {
   );
 };
 
-export default Converter;
+export default ConvertButton;

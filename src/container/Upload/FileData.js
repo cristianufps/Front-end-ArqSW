@@ -11,14 +11,27 @@ const FileData = ({ selectedFile }) => {
       {selectedFile && (
         <Container>
           <h2>File Details:</h2>
-          <p>File Name: {selectedFile.name}</p>
-          <p>File Type: {selectedFile.type}</p>
+          <p>
+            <strong> File Name: </strong>
+            {selectedFile.name}
+          </p>
+          <p>
+            <strong>File Type: </strong>
+            {selectedFile.type}
+          </p>
         </Container>
       )}
-
-      <Container>
-        <h4>Choose before Pressing the Upload button</h4>
-      </Container>
+      {/* <Container>
+        <h2>New File:</h2>
+        <p>
+          <strong> File Name: </strong>
+          {selectedFile.name}
+        </p>
+        <p>
+          <strong>File Type: </strong>
+          {selectedFile.type}
+        </p>
+      </Container> */}
     </>
   );
 };
