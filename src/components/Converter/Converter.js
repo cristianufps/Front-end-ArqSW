@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FileData from "../../container/Upload/FileData";
 
 import styled from "styled-components";
@@ -33,37 +33,23 @@ const Container = styled.div`
 const Converter = () => {
   const [dissableConvert, setDissableConvert] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [ext, setExt] = useState("");
   const hiddenFileInput = useRef(null);
-
-  const onFileChange = (e) => {
-    setSelectedFile(e.target.files[0]);
-    e.preventDefault();
-    console.log(e);
-    console.log(selectedFile);
-  };
 
   const onFileUpload = () => {
     const formData = new FormData();
-
-    formData.append(selectedFile, selectedFile.type);
+    formData.append("image", selectedFile);
+    formData.append("ext", ext);
 
     console.log(selectedFile);
-
-    axios.post("api/uploadfile", formData);
-  };
-
-  const onFileChoose = (e) => {
-    e.preventDefault();
-    hiddenFileInput.current.click();
+    axios
+      .post("http://localhost:3030/converter", formData)
+      .then((resp) => console.log(resp));
   };
 
   return (
     <Container>
-      <Upload
-        onFileChoose={onFileChoose}
-        onFileChange={onFileChange}
-        hiddenFileInput={hiddenFileInput}
-      />
+      <Upload setSelectedFile={setSelectedFile} />
       <FileFormat />
       <FileData selectedFile={selectedFile} />
       <Button onClick={onFileUpload}>Convert!</Button>

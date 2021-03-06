@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
 const TitleApp = styled.h1`
@@ -19,18 +19,29 @@ const Button = styled.button`
   height: 35px;
 `;
 
-const Upload = ({ onFileChoose, onFileChange, hiddenFileInput }) => {
+const Upload = ({ setSelectedFile }) => {
+  const hiddenFileInput = useRef(null);
+
+  const handleChoose = (e) => {
+    hiddenFileInput.current.click();
+  };
+
+  const handleChange = (e) => {
+    const fileUploaded = e.target.files[0];
+    setSelectedFile(() => fileUploaded);
+  };
+
   return (
     <>
       <TitleApp>Image Converter</TitleApp>
       <div style={{ display: "grid" }}>
-        <label htmlFor="File">Choose your file</label>
-        <Button onClick={onFileChoose}> Choose your File </Button>
+        <label htmlFor="File">Click Here!</label>
+        <Button onClick={handleChoose}> Choose your File </Button>
         <input
           style={{ display: "none" }}
           type="file"
           ref={hiddenFileInput}
-          onChange={onFileChange}
+          onChange={handleChange}
         />
       </div>
     </>
