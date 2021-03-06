@@ -15,6 +15,7 @@ const Buttons = styled.div`
 `;
 
 const FileFormat = (format) => {
+
   return (
     <Container>
       {formats.map(({ id, name, img }) => (

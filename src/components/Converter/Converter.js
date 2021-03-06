@@ -5,6 +5,7 @@ import FileData from "../../container/Upload/FileData";
 
 import styled from "styled-components";
 import FileFormat from "../../container/Download/FileFormat";
+import Upload from "../../container/Upload/Upload";
 
 const Button = styled.button`
   border-radius: 10px;
@@ -16,7 +17,7 @@ const Button = styled.button`
   align-items: center;
   margin-top: 20px;
   margin-bottom: 40px;
-  height: 25px;
+  height: 35px;
 `;
 
 const Container = styled.div`
@@ -29,18 +30,22 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Upload = () => {
+const Converter = () => {
+  const [dissableConvert, setDissableConvert] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const hiddenFileInput = useRef(null);
 
-  const onFileChange = (event) => {
-    setSelectedFile({ selectedFile: event.target.files[0] });
+  const onFileChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+    e.preventDefault();
+    console.log(e);
+    console.log(selectedFile);
   };
 
   const onFileUpload = () => {
     const formData = new FormData();
 
-    formData.append("myFile", selectedFile, selectedFile.name);
+    formData.append(selectedFile, selectedFile.type);
 
     console.log(selectedFile);
 
@@ -48,23 +53,17 @@ const Upload = () => {
   };
 
   const onFileChoose = (e) => {
+    e.preventDefault();
     hiddenFileInput.current.click();
   };
 
   return (
     <Container>
-      <h1>Safguar Converter</h1>
-      <div style={{ display: "grid" }}>
-        <label htmlFor="File">Choose your file</label>
-        <Button onClick={onFileChoose}> Choose your File </Button>
-        <input
-          style={{ display: "none" }}
-          type="file"
-          ref={hiddenFileInput}
-          onChange={onFileChange}
-        />
-      </div>
-
+      <Upload
+        onFileChoose={onFileChoose}
+        onFileChange={onFileChange}
+        hiddenFileInput={hiddenFileInput}
+      />
       <FileFormat />
       <FileData selectedFile={selectedFile} />
       <Button onClick={onFileUpload}>Convert!</Button>
@@ -72,4 +71,4 @@ const Upload = () => {
   );
 };
 
-export default Upload;
+export default Converter;

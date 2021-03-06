@@ -1,14 +1,15 @@
-// import Loader from "./components/Loading/Loading";
 import styled from "styled-components";
-import Upload from "./components/Upload/Upload";
+import GlobalStyle from "./global/style/GlobalStyle.js";
+import Converter from "./components/Converter/Converter";
+import Presentation from "./components/Presentation/Presentation.js";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NotFound from "./components/NotFound/NotFound.js";
 
 const MainContainer = styled.div`
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   left: 50%;
   top: 50%;
   position: absolute;
@@ -17,13 +18,19 @@ const MainContainer = styled.div`
 
 function App() {
   return (
-    <div className="App">
+    <MainContainer className="App">
       {/* <h1>Converter</h1> */}
-      <MainContainer>
-        {/* <Loader /> */}
-        <Upload />
-      </MainContainer>
-    </div>
+      <GlobalStyle />
+
+      <Router>
+        <Switch>
+          <Route path="/" component={Presentation} exact />
+          <Route path="/home" component={Presentation} exact />
+          <Route path="/converter" component={Converter} exact />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </MainContainer>
   );
 }
 

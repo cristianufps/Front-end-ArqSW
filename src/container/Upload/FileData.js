@@ -7,7 +7,7 @@ const Container = styled.div`
 `;
 const FileData = ({ selectedFile }) => {
   return (
-    <div>
+    <>
       {selectedFile && (
         <Container>
           <h2>File Details:</h2>
@@ -19,7 +19,7 @@ const FileData = ({ selectedFile }) => {
       <Container>
         <h4>Choose before Pressing the Upload button</h4>
       </Container>
-    </div>
+    </>
   );
 };
 
