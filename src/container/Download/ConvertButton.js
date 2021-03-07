@@ -3,7 +3,7 @@ import axios from "axios";
 
 import styled from "styled-components";
 
-const Button = styled.button`
+const Button = styled.button `
   border-radius: 10px;
   color: white;
   background: red;
@@ -17,37 +17,32 @@ const Button = styled.button`
 `;
 
 const ConvertButton = ({ selectedFile, ext }) => {
-  const onFileUpload = () => {
-    const formData = new FormData();
-    formData.append("image", selectedFile); // image/png, image/jpeg, image/gif, image/bmp
-    formData.append("ext", ext); //
+        const onFileUpload = () => {
+            const formData = new FormData();
+            formData.append("image", selectedFile); // image/png, image/jpeg, image/gif, image/bmp
+            formData.append("ext", ext); //
+            console.log(selectedFile);
+            axios
+                .post("http://localhost:3030/converter", formData) // py, java, node
+                .then((resp) => {
+                    let route = "";
+                    route = 'http://localhost:3030/image/' + resp.data.url;
+                    let newWindow = window.open(route, "blank");
+                })
+                .catch((error) => console.log(error));
+        };
 
-    console.log(selectedFile);
-    axios
-      .post("http://localhost:3030/converter", formData) // py, java, node
-      .then((resp) => {
-        const url = window.URL.revokeObjectURL(new Blob(resp.data));
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", 'algo.png');
-        console.log('algo');
-        document.body.appendChild(link);
-        link.click();
-      })
-      .catch((error) => console.log(error));
-  };
+        return ( < > {
+                selectedFile && ext ? ( < Button onClick = { onFileUpload } > Convert! < /Button>) : ( < Button onClick = { onFileUpload }
+                    style = {
+                        { background: "gray" }
+                    }
+                    disabled >
+                    Convert!
+                    <
+                    /Button>
+                )
+            } < />);
+        };
 
-  return (
-    <>
-      {selectedFile && ext ? (
-        <Button onClick={onFileUpload}>Convert!</Button>
-      ) : (
-        <Button onClick={onFileUpload} style={{ background: "gray" }} disabled>
-          Convert!
-        </Button>
-      )}
-    </>
-  );
-};
-
-export default ConvertButton;
+        export default ConvertButton;
