@@ -17,7 +17,6 @@ const Button = styled.button`
 `;
 
 const ConvertButton = ({ selectedFile, ext }) => {
-
   const onFileUpload = () => {
     const formData = new FormData();
     formData.append("image", selectedFile); // image/png, image/jpeg, image/gif, image/bmp
@@ -25,8 +24,17 @@ const ConvertButton = ({ selectedFile, ext }) => {
 
     console.log(selectedFile);
     axios
-      .post("http://localhost:3030/converter", formData)  // py, java, node
-      .then((resp) => console.log(resp));
+      .post("http://localhost:3030/converter", formData) // py, java, node
+      .then((resp) => {
+        const url = window.URL.revokeObjectURL(new Blob(resp.data));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", 'algo.png');
+        console.log('algo');
+        document.body.appendChild(link);
+        link.click();
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
