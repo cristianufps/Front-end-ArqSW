@@ -1,4 +1,4 @@
-## CONVERTOR IMAGENES JAVASCRIPT# Getting Started with Create React App
+## CONVERTOR IMAGENES JAVASCRIPT
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
