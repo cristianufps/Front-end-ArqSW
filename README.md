@@ -1,77 +1,28 @@
-Conversor de imagenes
+Conversor de imagenes en pagina Web
 =====================
-### Requisitos
+El siguiente proyecto es un convertidor de imágenes diseñado ejecutado via Web, la cual se encarga de buscar una imagen en el directorio raíz para su conversión en los siguientes formatos GIF, BMP, PNG y JPG.
+
+### Requisito
+Tener instalado reactJs
+
 ### Librerías Implementadas
-### ¿Cómo probar?
 
-<<<<<<< HEAD
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
++ **ReactJs:**
+Es una librería de JavaScript construida por Facebook que permite diseñar vistas simples en una página web, los componentes que se construyen dentro de él, son reutilizables y su comunicación es más óptima, ademas se uso está librería de JavaScript con el fin de agilizar los procesos lógicos y las peticiones al Back-end, y con el fin de manejar enrutamientos en cada sección/componente.
 
-## Available Scripts
+### Arquitecturas implementada
 
-In the project directory, you can run:
+La arquitectura que se manejo, fue la arquitectura atómica, la cual consiste en dividir lo que más se pueda cada uno de los componentes, para independizar la lógica o funcionalidades y distribuir de manera eficiente los archivos, donde se pueda obtener un fácil acceso en cuanto a importaciones y comunicación de data. Asi mismo, para simplificar las peticiones dentro de cada uno de estos componentes, parametrizando los datos que van a ser suministrados a componentes principales por medio de containers.
 
-### `yarn start`
+### Herramientas 
+Las herramientas que se implementaron para el desarrollo del sitio web de conversor de imagenes fueron las siguientes:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
++ **Styled-components:**
+Es un componente el cual permite trabajar el modulo de CSS en javascript para el manejo de los estilos de la pagina web. Además tiene la ventaja de crear clases automáticas para cada uno de los componentes.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
++ **React-router-dom:**
+Es una libería para gestionar rutas en aplicaciones que utilicen la libreria ReactJS.
++ **Axios:**
+Se trata de una librería Javascript capaz de ejecutarse tanto en el navegador como en NodeJS, que facilita todo tipo de operaciones como cliente HTTP.
+Con Axios puedes realizar solicitudes contra un servidor, completamente configurables, y recibir la respuesta de una manera sencilla de procesa
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See .the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
->>>>>>> 7eea400dfdc33a08a64c785ea74383f92eb42af8
