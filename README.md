@@ -1,9 +1,9 @@
 Conversor de imagenes en pagina Web
 =====================
-El siguiente proyecto es un convertidor de imágenes diseñado ejecutado via Web, la cual se encarga de buscar una imagen en el directorio raíz para su conversión en los siguientes formatos GIF, BMP, PNG y JPG.
+El siguiente proyecto es un convertidor de imágenes diseñado ejecutado via Web, la cual se encarga de buscar una imagen desde cualquier lugar para su conversión en los siguientes formatos GIF, BMP, PNG y JPG.
 
 ### Requisito
-Tener instalado reactJs
++ Tener instalado reactJs en el equipo.
 
 ### Librerías Implementadas
 
@@ -22,7 +22,13 @@ Es un componente el cual permite trabajar el modulo de CSS en javascript para el
 
 + **React-router-dom:**
 Es una libería para gestionar rutas en aplicaciones que utilicen la libreria ReactJS.
+
 + **Axios:**
-Se trata de una librería Javascript capaz de ejecutarse tanto en el navegador como en NodeJS, que facilita todo tipo de operaciones como cliente HTTP.
-Con Axios puedes realizar solicitudes contra un servidor, completamente configurables, y recibir la respuesta de una manera sencilla de procesa
+Se trata de una librería Javascript capaz de ejecutarse tanto en el navegador como en NodeJS, que facilita todo tipo de operaciones como cliente HTTP; con Axios puedes realizar solicitudes contra un servidor, completamente configurables, y recibir la respuesta de una manera sencilla de procesa.
+
+### ¿Como acceder la aplicación?
+1. Acceder a la dirección URL del sitio.
+2. Seleccionar la imagen a convertir.
+3. Seleccionar el formato al cual se desea convertir.
+4. Descargas el archivo convertido.
 
