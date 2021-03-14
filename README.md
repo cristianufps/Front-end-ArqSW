@@ -1,7 +1,14 @@
 <h1>Indice</h1>
+<ol>
+      <li><a href="uno">Conversor de Imagenes en página web</a></li>
+      <li>Requisito</li>
+      <li>Arquitecturas Implementada</li>
+      <li>Librerias Implementadas</li>
+      <li>A tener presente</li>
+ </ol>
 
 
-Conversor de imagenes en pagina Web
+<h2 id="uno">Conversor de imagenes en pagina Web</h2>
 =====================
 El siguiente proyecto es un convertidor de imágenes diseñado ejecutado via Web, la cual se encarga de buscar una imagen desde cualquier lugar para su conversión en los siguientes formatos GIF, BMP, PNG y JPG.
 
@@ -32,7 +39,7 @@ Se trata de una librería Javascript capaz de ejecutarse tanto en el navegador c
 3. Seleccionar el formato al cual se desea convertir.
 4. Descargas el archivo convertido.
 
-### A tener cuenta
+### A tener presente
 
 1. Si en principio desea correr el proyecto completo localmente debe primero descargar el proyecto https://github.com/edinsonAC/images-converter donde este sea el backend de la aplicación
 2. Luego como se menciona arriba descagar las librerias de node en cada proyecto con el comando npm i abreviatura de install
