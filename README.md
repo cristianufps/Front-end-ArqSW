@@ -10,7 +10,7 @@
 
 
 <h2 id="uno">Conversor de imagenes en pagina Web</h2>
-=====================
+
 El siguiente proyecto es un convertidor de imágenes diseñado ejecutado via Web, la cual se encarga de buscar una imagen desde cualquier lugar para su conversión en los siguientes formatos GIF, BMP, PNG y JPG.
 
 <h2 id="dos">Requisito</h2>
