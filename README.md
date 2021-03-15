@@ -13,8 +13,8 @@
 
 El siguiente proyecto es un convertidor de imágenes diseñado ejecutado via Web, la cual se encarga de buscar una imagen desde cualquier lugar para su conversión en los siguientes formatos GIF, BMP, PNG y JPG.
 
-<h2 id="dos">Requisito</h2>
-+ Tener instalado NodeJs en el equipo.
+<h2 id="dos">Dependencias</h2>
++ Se requiere tener instalado en el equipo NodeJs.
 
 <h2 id="tres">Arquitecturas implementada</h2>
 
